@@ -1,11 +1,15 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, ipcMain, BrowserWindow } from 'electron'
 import {
   createProtocol,
   installVueDevtools
 } from 'vue-cli-plugin-electron-builder/lib'
+
+import doImageProcessing from './backend/image_processing/api'
+
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,6 +17,11 @@ let win
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
+
+ipcMain.on('message', function(ev, info){
+  ev.sender.send('reply', doImageProcessing(info.obj))
+})
+
 
 function createWindow () {
   // Create the browser window.

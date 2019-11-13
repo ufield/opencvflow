@@ -190,6 +190,7 @@
   }
 
   dialog {
+    text-align: left;
     width: 250px;
     /*height: 100%;*/
     position: absolute;

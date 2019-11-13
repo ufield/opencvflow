@@ -41,5 +41,8 @@
 </script>
 
 <style scoped>
+  .sidebar{
+    text-align: left;
+  }
 
 </style>

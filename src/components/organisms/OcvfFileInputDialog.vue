@@ -97,6 +97,10 @@
 </script>
 
 <style scoped>
+  dialog{
+    text-align: left;
+  }
+
   img{
     margin: auto;
     margin-top: 10px;

@@ -110,6 +110,7 @@
   }
 
   .description{
+    text-align: left;
     /*width: 90%;*/
     /*margin-left: 5%;*/
     /*margin-top: 15px;*/
