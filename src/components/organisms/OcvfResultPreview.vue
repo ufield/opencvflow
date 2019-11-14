@@ -118,7 +118,7 @@
 
   img {
     width: 90%;
-    margin-left: 5%;
+    /*margin-left: 5%;*/
     margin-top: 5px;
     margin-bottom: 15px;
   }

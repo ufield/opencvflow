@@ -78,23 +78,12 @@
           return
         }
 
-        // this.nowDetailProcess = Object.keys(settingDefinitions[this.processName])[0]
         this.nowDetailProcess = block.parameters.detailProcess
         return Object.keys(settingDefinitions[this.processName])
       },
 
       settingParameters: function(){
-        // let processName = processDefinitions.find(process => process.processId === this.processId).name
-        // let parameters = settingDefinitions[this.processName][this.nowDetailProcess]
         let copiedSettingParameters = Vue.util.extend({}, settingDefinitions[this.processName][this.nowDetailProcess])
-
-        // if(this.nowDetailProcess === block.parameters.detailProcess){
-        //   // parameterが記録されているとき、それでsettingParameterを上書きする
-        //   for(let i in copiedSettingParameters){
-        //     let param = copiedSettingParameters[i]
-        //     param.paramDefault = block.parameters.detailParameters[param.paramName]
-        //   }
-        // }
 
         this.detailParametersCache = {}
         for(let i in copiedSettingParameters){
@@ -115,7 +104,6 @@
       setParameters: function(){
         let parameters = {'detailProcess': this.nowDetailProcess}
         parameters['detailParameters']  = this.detailParametersCache
-        // TODO: input の 値は、block.parametersにうまくbindするのがよいのか?
 
         let copiedParameters = Vue.util.extend({}, parameters)
         let info = {blockId: this.blockId, parameters: copiedParameters}
@@ -134,19 +122,11 @@
           return block.parameters.detailParameters[paramName]
         }
 
-        // if(this.nowDetailProcess === block.parameters.detailProcess){
-        //   // parameterが記録されているとき、それでsettingParameterを上書きする
-        //   for(let i in copiedSettingParameters){
-        //     let param = copiedSettingParameters[i]
-        //     param.paramDefault = block.parameters.detailParameters[param.paramName]
-        //   }
-        // } else {
-        //
-        // }
-
       },
 
       resetParameters: function(){
+        this.nowDetailProcess = Object.keys(settingDefinitions[this.processName])[0]
+        this.detailParametersCache = Vue.util.extend({}, settingDefinitions[this.processName][this.nowDetailProcess])
         // this.nowDetailProcess = Object.keys(settingDefinitions[this.processName])[0]
         // return Object.keys(settingDefinitions[this.processName])
         //
