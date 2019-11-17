@@ -1,16 +1,53 @@
-# opencvflow
+# OpenCVFlow
+
+OpenCVFlow is a visual programming software to dynamically execute image processing of OpenCV.
+
+![demo](https://github.com/ufield/opencvflow/wiki/media/movies/top.gif)
+
+## Introduction
+### Image processing types
+OpenCVFlow supports several image processing types listed bellow.
+- Grayscale
+- Binarization
+    - Binary
+    - ToZero
+    - Otsu
+- Filter
+    - Average
+    - Gaussian
+- Gradient
+    - Sobel
+    - Laplacian
+    - Canny
+
+### Functions of GUI
+Input an image by double clicking a "Input Image" block.
+
+
+Execute image processing and save the results.
+
+
+Change parameters by double clicking to blocks of image processing.
+
+
+Remove blocks or links by right click.
+
+
+Can make branch.
+
 
 ## Project setup
+Install:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+Compiles and hot-reloads for development: 
 ```
 npm run electron:serve
 ```
 
-### Compiles and minifies for production
+Compiles and minifies for production: 
 ```
 npm run electron:build
 ```
