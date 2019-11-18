@@ -37,7 +37,18 @@ Can make branch.
 ![branch](https://github.com/ufield/opencvflow/wiki/media/movies/branch.gif)
 
 
-## Project setup
+## Project setup (espacially on Mac OS)
+#### Install OpenCV
+```
+brew update
+brew install opencv@4
+brew link --force opencv@4
+
+export OPENCV4NODEJS_DISABLE_AUTOBUILD=1
+```
+See [this page](https://www.npmjs.com/package/opencv4nodejs) for details.
+
+#### Install and build this project
 Needs version 8 series of Node.js due to dependency.
 
 Install:
