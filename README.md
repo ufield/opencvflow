@@ -38,6 +38,8 @@ Can make branch.
 
 
 ## Project setup
+Needs version 8 series of Node.js due to dependency.
+
 Install:
 ```
 npm install
